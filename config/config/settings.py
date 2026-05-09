@@ -15,9 +15,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-secret-key")
 
-DEBUG = os.getenv("DJANGO_DEBUG", "True") == "True"
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "leadflow-crm-5z22.onrender.com",
+]
 
 
 # -------------------------------------------------------------------
