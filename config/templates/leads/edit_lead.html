@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Lead
+{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold">Edit Lead</h2>
+
+    <a href="{% url 'leads:list' %}" class="btn btn-dark">
+        Back
+    </a>
+</div>
+
+<div class="card shadow-sm border-0">
+
+    <div class="card-body p-4">
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                    <label class="form-label">First Name</label>
+                    {{ form.first_name }}
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Last Name</label>
+                    {{ form.last_name }}
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    {{ form.email }}
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Phone</label>
+                    {{ form.phone }}
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Company</label>
+                    {{ form.company }}
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Status</label>
+                    {{ form.status }}
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-4">
+                Update Lead
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
