@@ -108,7 +108,10 @@ import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.parse(
-        os.getenv("DATABASE_URL")
+        os.getenv(
+            "DATABASE_URL",
+            "sqlite:///" + str(BASE_DIR / "db.sqlite3")
+        )
     )
 }
 
